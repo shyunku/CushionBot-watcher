@@ -1,13 +1,4 @@
-import Home from "./components/home.js";
-import TodayItem from "./components/organisms/TodayItem.js";
-import Sidebar from "./components/sidebar.js";
-import UI from "./utils/ui.js";
-
-UI.registerComponent("Home", Home);
-UI.registerComponent("Sidebar", Sidebar);
-UI.registerComponent("TodayItem", TodayItem);
-
-const sample = `<div class="title">서버 연결 현황</div>
+<div class="title">서버 연결 현황</div>
 <div id="today">
   <div class="today-item server-745620493716947026">
     <div class="header">
@@ -76,44 +67,3 @@ const sample = `<div class="title">서버 연결 현황</div>
     <div class="content"><canvas id="today_chart_1016410932131397714" class="today-chart" /></div>
   </div>
 </div>
-`;
-
-document.addEventListener("DOMContentLoaded", () => {
-  // console.log(HtmlParser.parseHtml(sample));
-  const root = UI.$createRoot(`
-    <Home/>
-  `);
-  root.render();
-  console.log(root.children.toArray());
-});
-
-// $(document).ready(async () => {
-//   data = {};
-//   guilds = {};
-//   users = {};
-
-//   selectedGuildId = localStorage.getItem("selected_guild_id") ?? Object.keys(data)?.[0] ?? null;
-//   localStorage.setItem("selected_guild_id", selectedGuildId);
-
-//   // resize detect
-//   window.addEventListener("resize", () => {
-//     if (selectedGuildId != null) {
-//       displayMainContent();
-//     }
-//   });
-
-//   if (channelId != null) {
-//     const sidebarElem = $(".sidebar")[0];
-//     sidebarElem.style.display = "none";
-//     selectedGuildId = channelId;
-//   }
-
-//   setTimeout(async () => {
-//     await loadData();
-//     startSSE();
-
-//     console.log("data", data);
-//     console.log("guilds", guilds);
-//     console.log("users", users);
-//   }, 500);
-// });
